@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <title>Lion's den.</title>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+                    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+                    crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                    crossorigin="">
+        </script>
+        <!-- End Leaflet -->
+        <style>
+            body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+            .w3-row-padding img {margin-bottom: 12px}
+            .bgimg {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('assets/img/photo_1.png');
+                min-height: 100%;
+            }
+            #map {
+                width: 800px;
+                height: 500px;
+            }
+        </style>
+        
+    <body>
+        <!-- Sidebar with image -->
+        <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+            <div class="bgimg"></div>
+        </nav>
+        
+        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+                <i class="fa fa-remove"></i>
+            </a>
+            <div class="w3-bar-block w3-center">
+                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+                <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+                <a href="#memories" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Memories</a>
+                <a href="#videos" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Videos</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+                <a href="https://v6p9d9t4.ssl.hwcdn.net/html/2527751/EID/index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Game 1 (PC)</a>
+                <a href="games/game2.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Game 2</a>
+                <a href="games/game3.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Game 3 (PC)</a>
+            </div>
+        </nav>
+        
+        <!-- Page Content -->
+        <div class="w3-main w3-padding-large" style="margin-left:40%">
+            
+            <!-- Menu icon to open sidebar -->
+            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()">
+                <i class="fa fa-bars"></i>
+            </span>
+            
+            
+            
+            <!-- Header -->
+            <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+                <h1 class="w3-jumbo"><b>Emiliano</b></h1>
+                <p>City traveller, sports lover, and gamer in progress.</p>
+                <img src="assets/img/photo_1.png" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+                
+                <img src="assets/img/photo_1.png" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+                <div class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                    <a href="https://www.facebook.com/alexis.servin.5458"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+                </div>
+            </header>
+            
+            
+            
+            <!-- About Section -->
+            <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+                <h2>About</h2>
+                <hr class="w3-opacity">
+                <p>¡Welcome everyone! <br><br> My name is Emiliano and it's my pleasure to see you here.<br>This is a place where I'd like to share a little bit of myself. I love meeting new people, practicing sports, and playing video games.<br>
+                </p>
+                <p>
+                More about myself:<br>
+                <ul>
+                    <li>Major accomplishment: Black belt on karate.</li>
+                    <li>Favorite dish: carrot cream soup. (No kidding!)</li>
+                    <li>Favorite soccer team: América (all-time supporter).</li>
+                    <li>Major strength: I like listening to people.</li>
+                    <li>Major weakness: I get distracted easily. :P</li>
+                    <li>Deepest secret: Can't tell, it's a secret!</li>
+                    <li>Describe yourself: I considered myself to be a good brother, a reliable team player, and good at making budgets.</li>
+                </ul>
+                
+                </p>
+                <p>
+                Sports I enjoy:<br>
+                <ul>
+                    <li>Swimming.</li>
+                    <li>Football (soccer).</li>
+                    <li>Box.</li>
+                </ul>
+                
+                </p>
+                <h3 class="w3-padding-16">My gaming stats:</h3>
+                <a href="https://fortnitetracker.com/profile/all/Medal%20FKS"><p class="w3-wide">Brawl Stars:</p></a>
+                <div class="w3-light-grey">
+                    <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">950</div>
+                </div>
+                <a href="https://tracker.gg/halo-infinite/profile/xbl/Graslu/"><p class="w3-wide">Halo</p></a>
+                <div class="w3-light-grey">
+                    <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">850</div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><p class="w3-wide">Clash Royale</p></a>
+                <div class="w3-light-grey">
+                    <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">800</div>
+                </div>
+                <a href="https://fortnitetracker.com/profile/all/Medal%20FKS"><p class="w3-wide">Fortnite</p></a>
+                <div class="w3-light-grey">
+                    <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:50%">500</div>
+                </div><br>
+                
+                
+                <!-- Testimonials -->
+                <h3 class="w3-padding-24">My four-legged buddies:</h3>
+                
+                <img src="assets/img/sam.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                <p><span class="w3-large w3-text-black w3-margin-right">Samantha</span></p>
+                <p>I like sleeping all day, playing all night!</p><br>
+                
+                <img src="assets/img/scott.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                <p><span class="w3-large w3-text-black w3-margin-right">Scott</span></p>
+                <p>Always up for a treat!</p><br>
+                        
+            </div>
+            
+            <!-- End About Section -->
+            
+            <!-- Portfolio Section -->
+            <div class="w3-padding-32 w3-content" id="memories">
+                <h2 class="w3-text-grey">Memories</h2>
+                <hr class="w3-opacity">
+                
+                <!-- Grid for photos -->
+                <div class="w3-row-padding" style="margin:0 -16px">
+                    <div class="w3-half">
+                        <img src="assets/img/photo_2.png" style="width:100%" onclick="onClick(this)" alt="Happy Holidays everyone!">
+                        <img src="assets/img/photo_4.png" style="width:100%" onclick="onClick(this)" alt="Samantha!">
+                        <img src="assets/img/photo_6.png" style="width:100%" onclick="onClick(this)" alt="Samantha again.">
+                        <img src="assets/img/photo_8.png" style="width:100%" onclick="onClick(this)" alt="Teaching karate moves to Samantha.">
+                        <img src="assets/img/photo_9.png" style="width:100%" onclick="onClick(this)" alt="My siblings, I love them!">
+                        <img src="assets/img/photo_12.png" style="width:100%" onclick="onClick(this)" alt="Pillow cat, fluffy and warm.">
+                        <img src="assets/img/photo_14.png" style="width:100%" onclick="onClick(this)" alt="">
+                    </div>
+                    
+                    <div class="w3-half">
+                        <img src="assets/img/photo_3.png" style="width:100%" onclick="onClick(this)" alt="Christmas time!">
+                        <img src="assets/img/photo_5.png" style="width:100%" onclick="onClick(this)" alt="Siblings!">
+                        <img src="assets/img/photo_7.png" style="width:100%" onclick="onClick(this)" alt="Santa's little helper.">
+                        <img src="assets/img/photo_10.png" style="width:100%" onclick="onClick(this)" alt="Chilling while waiting for Santa.">
+                        <img src="assets/img/photo_11.png" style="width:100%" onclick="onClick(this)" alt="First time driving a boat... piece of cake!">
+                        <img src="assets/img/photo_13.png" style="width:100%" onclick="onClick(this)" alt="">
+                    </div>
+                    <!-- End photo grid -->
+                </div>
+                <!-- End Portfolio Section -->
+            </div>
+            
+            
+            <!-- Music -->
+            <div class="w3-padding-32 w3-content w3-text-grey" id="videos" style="margin-bottom:64px">
+                <h2>Vdeos I like</h2>
+                <hr class="w3-opacity">
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
+            </div>
+
+            
+            <!-- Contact Section -->
+            <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+                <h2>Contact Me</h2>
+                <hr class="w3-opacity">
+                
+                <div class="w3-section">
+                    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Mexico</p>
+                    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: undisclosed@email.com</p>
+                </div>
+                <br><br>
+                <p>Click the button show your coordinates and your position on the map!</p>
+                <button onclick="getLocation()">Find your coordinates</button>
+                <p id="demo"></p>
+                <br><br>
+                
+                <!-- Map -->
+                <div id="map" class="w3-opacity">
+                </div>
+                <!-- End Map -->
+            </div>
+            
+            
+            <!-- Footer -->
+            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+                <a href="https://www.facebook.com/alexis.servin.5458"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+                <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+                <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+                <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+                <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+                <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+                <p class="m-0 text-center text-white">Copyright &copy; 2022</p>
+                <!-- End footer -->
+            </footer>
+            
+            <!-- END PAGE CONTENT -->
+        </div>
+        
+        <!-- Modal for full size images on click-->
+          <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+              <img id="img01" class="w3-image" style="width:50%">
+              <p id="caption"></p>
+            </div>
+          </div>
+        
+        <script>
+            // Modal Image Gallery
+            function onClick(element) {
+              document.getElementById("img01").src = element.src;
+              document.getElementById("modal01").style.display = "block";
+              var captionText = document.getElementById("caption");
+              captionText.innerHTML = element.alt;
+            }
+        </script>
+        <script src="js/myScripts.js"></script>
+    </body>
+</html>
