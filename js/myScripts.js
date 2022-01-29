@@ -1,4 +1,5 @@
 
+// Pane
 function openNav() {
   document.getElementById("mySidebar").style.width = "60%";
   document.getElementById("mySidebar").style.display = "block";
@@ -9,7 +10,7 @@ function closeNav() {
 }
 
 
-
+// Map
 var map = L.map('map');
 
 map.createPane('labels');
@@ -35,7 +36,7 @@ map.setView({lat: 19.4326, lng: -99.1332}, 17);
 
 
 
-
+// Localization
 var x = document.getElementById("positionUser");
 
 function getLocation() {
@@ -47,8 +48,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
     map.setView({lat: position.coords.latitude, lng: position.coords.longitude}, 17);
     var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
 }
