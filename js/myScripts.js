@@ -36,7 +36,7 @@ map.setView({lat: 19.4326, lng: -99.1332}, 17);
 
 
 
-var x = document.getElementById("demo");
+var x = document.getElementById("positionUser");
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -50,5 +50,14 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
     map.setView({lat: position.coords.latitude, lng: position.coords.longitude}, 17);
-    var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+    //var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
 }
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
