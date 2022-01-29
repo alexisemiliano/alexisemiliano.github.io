@@ -28,22 +28,7 @@
 </div>
 <!-- End Map -->
 
-<script>
-var x = document.getElementById("demo");
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
 
 <script>
     // Map
@@ -69,6 +54,29 @@ function showPosition(position) {
     }).addTo(map);
 
     map.setView({lat: 19.4326, lng: -99.1332}, 17);
+    
+    function setCoordsInMap(lat,lon){
+        map.setView({lat: lat, lng: lon}, 17);
+    }
+    
+</script>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  setCoordsInMap(position.coords.latitude,position.coords.longitude);
+}
 </script>
 
 </body>
