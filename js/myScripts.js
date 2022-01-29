@@ -50,7 +50,7 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
     map.setView({lat: position.coords.latitude, lng: position.coords.longitude}, 17);
-    //var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+    var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
 }
 
 // Modal Image Gallery
