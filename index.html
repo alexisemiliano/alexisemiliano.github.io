@@ -27,11 +27,16 @@
                 min-height: 100%;
             }
             #map {
-                width: 500px;
                 height: 500px;
             }
         </style>
-        
+        <!--
+        #map {
+            width: 500px;
+            height: 500px;
+        }
+        -->
+            
     <body>
         <!-- Sidebar with image -->
         <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
@@ -199,12 +204,11 @@
                 <br><br>
                 <p>Click the button show your coordinates and your position on the map!</p>
                 <button onclick="getLocation()">Find your coordinates</button>
-                <div>
-                <p id="positionUser"></p></div>
+                <p id="positionUser"></p>
                 <br><br>
                 
                 <!-- Map -->
-                <div id="map" class="w3-opacity">
+                <div id="map" class="w3-opacity" style="width:100%">
                 </div>
                 <!-- End Map -->
             </div>
