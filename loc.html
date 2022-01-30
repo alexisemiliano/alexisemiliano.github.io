@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-                integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-                crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-                crossorigin="">
-    </script>
-    <!-- End Leaflet -->
-    <style>
-        #map {
-            width: 500px;
-            height: 500px;
-        }
-    </style>
+
 <body>
 
 <p>Click the button to get your coordinates.</p>
@@ -22,44 +8,6 @@
 <button onclick="getLocation()">Try It</button>
 
 <p id="demo"></p>
-
-<!-- Map -->
-<div id="map">
-</div>
-<!-- End Map -->
-
-
-
-<script>
-    // Map
-    var map = L.map('map');
-
-    map.createPane('labels');
-
-    // This pane is above markers but below popups
-    map.getPane('labels').style.zIndex = 650;
-
-    // Layers in this pane are non-interactive and do not obscure mouse/touch events
-    map.getPane('labels').style.pointerEvents = 'none';
-
-    var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
-
-    var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-        attribution: cartodbAttribution
-    }).addTo(map);
-
-    var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-        attribution: cartodbAttribution,
-        pane: 'labels'
-    }).addTo(map);
-
-    map.setView({lat: 19.4326, lng: -99.1332}, 17);
-    
-    function setCoordsInMap(lat,lon){
-        map.setView({lat: lat, lng: lon}, 17);
-    }
-    
-</script>
 
 <script>
 var x = document.getElementById("demo");
