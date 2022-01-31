@@ -11,27 +11,38 @@ function closeNav() {
 
 // Map
 var map = L.map('map');
-
+map.setView({lat: 19.4326, lng: -99.1332}, 17);
 map.createPane('labels');
 
+// New addition starts --------
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(map);
+// New addition finishes --------
+
 // This pane is above markers but below popups
-map.getPane('labels').style.zIndex = 650;
+//map.getPane('labels').style.zIndex = 650;
 
 // Layers in this pane are non-interactive and do not obscure mouse/touch events
-map.getPane('labels').style.pointerEvents = 'none';
+//map.getPane('labels').style.pointerEvents = 'none';
 
-var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
+//var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
 
-var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-    attribution: cartodbAttribution
-}).addTo(map);
+//var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+//    attribution: cartodbAttribution
+//}).addTo(map);
 
-var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-    attribution: cartodbAttribution,
-    pane: 'labels'
-}).addTo(map);
+//var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+//    attribution: cartodbAttribution,
+//    pane: 'labels'
+//}).addTo(map);
 
-map.setView({lat: 19.4326, lng: -99.1332}, 17);
+
 
 
 
