@@ -23,26 +23,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'your.mapbox.access.token'
 }).addTo(map);
-// New addition finishes --------
-
-// This pane is above markers but below popups
-//map.getPane('labels').style.zIndex = 650;
-
-// Layers in this pane are non-interactive and do not obscure mouse/touch events
-//map.getPane('labels').style.pointerEvents = 'none';
-
-//var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
-
-//var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-//    attribution: cartodbAttribution
-//}).addTo(map);
-
-//var positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-//    attribution: cartodbAttribution,
-//    pane: 'labels'
-//}).addTo(map);
-
-
 
 
 
